@@ -25,4 +25,15 @@ fun testPool() {
     obj1 = null
     // garbage collect obj0
     System.gc()
+
+    println("try pull object")
+    var obj2 : HandleDataResource? = pool.pull()
+    println("pulled object: ${obj2?.dataResource}")
+    obj2?.process()
+
+    Thread.sleep(4000)
+
+    obj2 = null
+    // garbage collect obj0
+    System.gc()
 }
