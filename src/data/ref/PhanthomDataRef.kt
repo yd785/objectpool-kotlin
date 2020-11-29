@@ -8,12 +8,12 @@ import java.lang.ref.ReferenceQueue
 class PhanthomDataRef (referant : HandleDataResource, queue : ReferenceQueue<HandleDataResource>)
     : PhantomReference<HandleDataResource>(referant, queue) {
 
-    private val dataResource = referant.dataResource
+    var dataResource = referant.dataResource
+        private set
 
     fun dispose() {
         val r = dataResource
-        println("dispose PhantomResourceRef")
-        println("dispose PhantomResourceRef res " + r);
+        println("dispose PhantomResourceRef res " + r)
         r.release()
     }
 }

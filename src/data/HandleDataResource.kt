@@ -2,7 +2,7 @@ package data
 
 import pool.ObjectPool
 
-class HandleDataResource (val dataResource: ObjectPool.RefDataResource) : IResource {
+class HandleDataResource (val dataResource: DataResource) : IResource {
 
     fun process() = doSomthing()
 

@@ -16,13 +16,13 @@ fun setup() {
 
 fun testPool() {
     println("try pull object")
-    var obj0 : HandleDataResource? = pool.pull()
-    println("pulled object: ${obj0?.dataResource}")
-    obj0?.process()
+    var obj1 : HandleDataResource? = pool.pull()
+    println("pulled object: ${obj1?.dataResource}")
+    obj1?.process()
 
     Thread.sleep(4000)
 
-    obj0 = null
+    obj1 = null
     // garbage collect obj0
     System.gc()
 }
